@@ -139,7 +139,7 @@
 
 .box-container.mostrar {
   opacity: 1;
-  transform: translateX(0); /* Mueve el elemento a su posición origin */
+  transform: translateX(0); /* Mueve el elemento a su posición orgn */
 }
 
 h2 {
