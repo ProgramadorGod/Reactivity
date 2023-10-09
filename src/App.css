@@ -1,38 +1,162 @@
-.App {
+/* App.css */
+.app-container {
   text-align: center;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Main-Title {
+  font-size: 2.5em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.menu-icon {
+  font-size: 2em;
+  cursor: pointer;
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.NavBar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #B4F7F5;
+  box-shadow:0px 5px 10px #333;
+
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Nav-item {
+  margin: 15px;
+  margin-inline-end: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.5em;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Nav-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Nav-item:hover::before,
+.Nav-item.active::before {
+  transform: scaleX(1);
+}
+
+.Nav-item:hover {
+  color: #555;
+}
+
+.Nav-item.active {
+  color: #555;
+}
+
+@media only screen and (max-width: 600px) {
+  .NavBar {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .Nav-item {
+    margin: 10px;
   }
+
+  .menu-icon {
+    display: block;
+  }
+}
+/* ImageComponent.css */
+/* ImageComponent.css */
+.image-container {
+  
+  display: flex;
+  justify-content: center;
+  width: 130%;
+  align-items: center;
+  margin-top: 10px;
+  height: 50vh; /* O ajusta la altura según tus necesidades */
+  opacity: 0; /* Inicia invisible */
+  transform: translateX(-100%); /* Empieza fuera de la pantalla a la izquierda */
+  transition: opacity 1s, transform 0.8s; 
+}
+
+.image-container img {
+  display: flex;
+  justify-content: center;
+  box-shadow:-10px 10px 10px #333;
+  align-items: center;
+  max-width: 100%;
+  max-height: 100%;
+
+  
+
+}
+
+.image-container.show{
+  opacity: 1;
+  transform: translateX(0); 
+}
+
+.Lol{
+
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  
+}
+
+/* BoxComponent.css */
+.box-container {
+  margin-top: 0px;
+
+  background-color:#6af5f373;
+  padding: 14px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+ /* Establece posición absoluta para sobrepasar la imagen */
+  top: 50%; /* Ubica el cuadro en la mitad superior de la imagen */
+  right: 20px; /* Establece un espacio a la derecha de la imagen */
+  transform: translateY(-50%); /* Centra verticalmente el cuadro en relación con la imagen */
+  text-align: center;
+  justify-content: center;
+  opacity: 0; /* Inicia invisible */
+  transform: translateX(-100%); /* Empieza fuera de la pantalla a la izquierda */
+  transition: opacity 1s, transform 0.8s; 
+  
+}
+
+.box-container.mostrar {
+  opacity: 1;
+  transform: translateX(0); /* Mueve el elemento a su posición origin */
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+body{
+  background-color: #bbd4d4;
 }
